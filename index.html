@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CPS 630 Lab 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="switch.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="weather-icons-wind.css" >
+  <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+  <div class="root">
+    <section class="controls">
+      <div>
+        <div class="input">
+          <input type="text" name="city" id="city-name" placeholder="Enter City" ><br>
+          <input type="text" name="country" id="country-name" placeholder="Enter Country Code">
+          <button onclick="searchCity()">Search</button>
+        </div>
+        <div class="ctof">
+          <label>°C</label>
+          <label class="switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider round"></span>
+          </label>
+          <label>°F</label>
+        </div>
+        <p id="city-error"></p>
+      </div>
+    </section>
+    <section id="prompt" class="prompt">
+      <h1>
+        Enter and City and Country Code<br>to find the weather!
+      </h1>
+    </section>
+    <h2 id="now" class="now">Now</h2>
+    <section class="daily">
+      <div class="weather-condition"></div>
+      <div class="weather">
+        <div class="city"></div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </section>
+    <hr id="division">
+    <section id="forecast" class="forecast"></section>
+  </div>
+  <a class="credit" href="https://erikflowers.github.io/weather-icons/"><p>Icons by Erik Flowers</p></a>
+  <div class="day-details">
+    <div class="details">
+      <h2 id="day-date"></h2>
+      <table id="day-info">
+        <tr>
+          <th>Time</th>
+          <th>Weather</th>
+          <th>Temperature</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
