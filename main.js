@@ -67,7 +67,7 @@ var currentWeather = (xhr) => {
       setWeatherColor(document.getElementsByTagName('BODY')[0], weatherData.weather[0].main);
       weather.innerHTML = `<h4 class="daily-temp" temp=${weatherData.main.temp}></h4>` + weather.innerHTML;
       windIcon();
-      document.getElementsByClassName('humidity')[0].innerHTML = `<img src="image/svg/wi-humidity.svg"><p>${weatherData.main.humidity}%</p>`;;
+      document.getElementsByClassName('humidity')[0].innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-humidity.svg"><p>${weatherData.main.humidity}%</p>`;;
     } else {
       document.getElementById('city-error').textContent = 'Error retrieving weather data. Try Again.';
     }
@@ -140,7 +140,7 @@ function showDaydata(element) {
 function windIcon() {
   let windData = weatherData.wind;
   let container = document.getElementsByClassName('wind')[0];
-  container.innerHTML = '<img src="image/svg/wi-windy.svg">';
+  container.innerHTML = '<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-windy.svg">';
   let direction = '';
   switch (true) {
     case (windData.speed <= 330 && windData.speed < 30):
@@ -197,24 +197,24 @@ function forecastElement(w, date, min, max) {
 function setWeatherIcon(container, weatherStatus) {
   switch (weatherStatus) {
     case 'Rain':
-      container.innerHTML = `<img src="image/svg/wi-rain.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-rain.svg"><h5>${weatherStatus}</h5>`;
       break;
     case 'Clouds':
-      container.innerHTML = `<img src="image/svg/wi-cloudy.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-cloudy.svg"><h5>${weatherStatus}</h5>`;
       break;
     case 'Clear':
-      container.innerHTML = `<img src="image/svg/wi-day-sunny.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-day-sunny.svg"><h5>${weatherStatus}</h5>`;
       break;
     case 'Snow':
-      container.innerHTML = `<img src="image/svg/wi-snow.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-snow.svg"><h5>${weatherStatus}</h5>`;
       break;
     case 'Fog':
-      container.innerHTML = `<img src="image/svg/wi-fog.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-fog.svg"><h5>${weatherStatus}</h5>`;
     case 'Drizzle':
-      container.innerHTML = `<img src="image/svg/wi-rain-mix.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-rain-mix.svg"><h5>${weatherStatus}</h5>`;
       break;
     default:
-      container.innerHTML = `<img src="image/svg/wi-day-haze.svg"><h5>${weatherStatus}</h5>`;
+      container.innerHTML = `<img src="https://s3.us-east-2.amazonaws.com/lionelpereira/assets/weather-icon/wi-day-haze.svg"><h5>${weatherStatus}</h5>`;
   }
   return container;
 }
